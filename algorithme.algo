@@ -1,0 +1,21 @@
+ALGORITHM read
+
+VAR
+  i, nb-voyel:INTEGER:=0;
+  nb-mot:INTEGER:=1;
+  str:STRING;
+BEGIN
+    write("type the sentence str")
+    read(str)
+    WHILE (str[i]<>".") DO
+        IF (str[i=" "]) THEN
+           nb-mot:= nb-mot+1
+        END_IF
+        IF (str[i]="a" OR str[i]="o" OR str[i]="i" OR str[i]="u" OR str[i]="e" OR str[i]="y"  ) THEN
+            nb-voyel:=nb-voyel+1
+        END_IF
+    END_WHILE
+    write ("the number of voyels:",nb-voyel)
+    write ("the number of words:",nb-mot)
+    write ("the lenght of the sentence:",i)
+END
