@@ -1,0 +1,27 @@
+ALGORITHM stucture
+VAR
+    set1:ARRAY_OF INTEGER[n1];
+    set2:ARRAY_OF INTEGER[n2];
+    set:ARRAY_OF INTEGER[n2+n1];
+    sum-distinct , sum-commun : INTEGER :=0;
+    found: BOOLEAN ;
+    i,j: INTEGER;
+    sum:= 0;
+
+BEGIN
+set:= concat(set1,set2);
+FOR i FROM 0 TO set.lenght-1 STEP  DO
+  found:=FALSE;
+  FOR j FROM 0 TO set.lenght-1 STEP   DO
+    IF (set[i]=set[j] AND i<>j) THEN
+       found:=true;
+       sum-commun=sum-commun + set[j];
+    END_IF
+    IF (found=FALSE) THEN
+        sum-distinct =  sum-distinct + set [j];
+    END_IF
+  END_FOR
+END_FOR
+write ("the  sum-distinct element is" ,  sum-distinct);
+write ("the sum of overlapping element is " , sum-commun);
+END
