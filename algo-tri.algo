@@ -1,0 +1,17 @@
+ALGORITHM tri
+VAR
+      i,j:INTEGER:;
+  tab: ARRAY_OF INTEGER[n];
+  
+ 
+BEGIN
+ FOR i FROM 1 TO n-1 STEP   DO
+ WHILE (i>0 AND tab[i-1]>tab[i]) DO
+    temp=tab[i];
+    tab[i]=tab[i-1];
+    tab[i-1]=temp;
+    i=i+1;
+ END_WHILE
+   
+ END_FOR
+END
